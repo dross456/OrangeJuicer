@@ -36,7 +36,7 @@ public class Worker implements Runnable {
 		while(c.isWorkday()){
 			processOrange(line.getOrange());
 		}
-		System.out.println("Worker " + plantID + ":" + iD + " clocking out");   
+		//System.out.println("Worker " + plantID + ":" + iD + " clocking out");   
 		p.incrementClockedOut();
 	}
 	
@@ -50,6 +50,6 @@ public class Worker implements Runnable {
         }
         p.incrementProcessed();
         //Prints completion of an orange for logging sake
-        System.out.println(plantID + ":" + iD);
+        //System.out.println(plantID + ":" + iD);
     }
 }

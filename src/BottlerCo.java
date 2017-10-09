@@ -26,11 +26,10 @@ public class BottlerCo{
     public BottlerCo(){
     	WorkDay();
     }
+    
     public static void main(String[] args) {
     	new BottlerCo();
-    	
-    	
-    	
+    		
     }
     
     /**Spawns the plants that fetch oranges and spawn workers.
@@ -80,8 +79,8 @@ public class BottlerCo{
 	 */
     public synchronized void closePlant(Plant p) {
     	closedDown++;
-    	System.out.println("Plant " + p.getPlantID() + " shuting down" + "");
-    	System.out.println(closedDown + " plants closed down");
+    	//System.out.println("Plant " + p.getPlantID() + " shuting down" + "");
+    	//System.out.println(closedDown + " plants closed down");
     	totalProvided += p.getProvided();
     	totalProcessed += p.getOrangesProcessed();
     	totalBottled += p.getBottles();

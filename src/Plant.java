@@ -35,8 +35,6 @@ public class Plant implements Runnable {
      */
 	public void run() {
 		for(int i = 0; i < NUM_WORKERS; i++){
-        	this.fetchOrange(new Orange());
-            provided++;
             new Worker(c, this, line, getPlantID(), i);
         }
         
@@ -105,7 +103,7 @@ public class Plant implements Runnable {
      */
     public void incrementClockedOut() {
     	clockedOut++;
-    	System.out.println("Plant" + getPlantID() + " " + clockedOut + " workers clocked out");
+    	//System.out.println("Plant" + getPlantID() + " " + clockedOut + " workers clocked out");
     }
 
 	/**
