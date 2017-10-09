@@ -1,17 +1,24 @@
 public class Worker implements Runnable {
+	//The BottlerCo that spawned the worker's plant
+	private BottlerCo c;
+	//The Plant that spawned this worker
 	private Plant p;
+	//The Assembly line that this worker will get oranges from to process
 	private AssemblyLine line;
+	//The ID of the plant that spawned this worker
 	private int plantID;
+	//The ID of this worker
 	private int iD;
 	
-	/** Creates a new worker thread to process oranges from the assembly line that it's plant passed it.
+	/**Creates a new worker thread to process oranges from the assembly line that it's plant passed it.
 	 * 
 	 * @param plant
 	 * @param l
 	 * @param pNum
 	 * @param num
 	 */
-	Worker(Plant plant, AssemblyLine l, int pNum, int num){
+	Worker(BottlerCo corp, Plant plant, AssemblyLine l, int pNum, int num){
+		c = corp;
 		p = plant;
 		line = l;
 		plantID = pNum;
@@ -20,27 +27,26 @@ public class Worker implements Runnable {
         System.out.println(plantID + ":" + iD + " started");
 	}
 	
-	/** Announces that the thread has started. 
+	/**Announces that the thread has started. 
 	 * Keeps track of weather or not it is time to stop running and them announces that it has stopped.
 	 * 
 	 */
 	public void run() {
         System.out.println(plantID + ":" + iD + " started");
-		while(p.timeToWork==true){
+		while(c.workDay){
 			processOrange(line.getOrange());
 		}
 		System.out.println("Worker " + plantID + ":" + iD + " clocking out");   
 		p.incrementClockedOut();
 	}
 	
-	/** Processes an Orange from the line
+	/**Processes an Orange from the line
 	 * 
 	 * @param o
 	 */
 	public void processOrange(Orange o) {
         while (o.getState() != Orange.State.Bottled) {
             o.runProcess();
-            // o.nextState();
         }
         p.incrementProcessed();
         //Prints completion of an orange for logging sake

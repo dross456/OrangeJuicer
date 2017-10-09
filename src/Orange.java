@@ -25,7 +25,7 @@ public class Orange {
             return State.values()[currIndex + 1];
         }
     }
-
+    //The state that orange is in
     private State state;
 
     /**Basic constructor.
@@ -36,7 +36,7 @@ public class Orange {
         doWork();
     }
 
-    /** Generic get method for state.
+    /**Generic get method for state.
      * 
      * @return
      */
@@ -44,7 +44,7 @@ public class Orange {
         return state;
     }
 
-    /** Checks to see if the orange still needs processing and processes it if it does.
+    /**Checks to see if the orange still needs processing and processes it if it does.
      * 
      */
     public void runProcess() {
@@ -55,7 +55,7 @@ public class Orange {
         state = state.getNext();
     }
 
-    /** Sleeps the thread for the amount of time necessary to do the work.
+    /**Sleeps the thread for the amount of time necessary to do the work.
      * 
      */
     private void doWork() {

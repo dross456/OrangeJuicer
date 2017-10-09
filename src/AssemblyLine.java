@@ -12,7 +12,7 @@ public class AssemblyLine {
 		oranges = new ArrayList<Orange>();
 	}
 	
-	/** Adds an orange to the queue (assemblyline)
+	/**Adds an orange to the queue (assemblyline)
 	 * 
 	 * @param o
 	 */
@@ -23,7 +23,7 @@ public class AssemblyLine {
 		}
 	}
 
-	/** Retrieves an orange from the queue.
+	/**Retrieves an orange from the queue.
 	 * 
 	 * @return
 	 */
