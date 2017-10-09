@@ -17,7 +17,7 @@ public class Worker implements Runnable {
 	 * @param pNum
 	 * @param num
 	 */
-	Worker(BottlerCo corp, Plant plant, AssemblyLine l, int pNum, int num){
+	public Worker(BottlerCo corp, Plant plant, AssemblyLine l, int pNum, int num){
 		c = corp;
 		p = plant;
 		line = l;
@@ -33,7 +33,7 @@ public class Worker implements Runnable {
 	 */
 	public void run() {
         System.out.println(plantID + ":" + iD + " started");
-		while(c.workDay){
+		while(c.isWorkday()){
 			processOrange(line.getOrange());
 		}
 		System.out.println("Worker " + plantID + ":" + iD + " clocking out");   

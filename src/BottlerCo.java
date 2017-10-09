@@ -4,7 +4,7 @@ public class BottlerCo{
     //The number of plants to spawn
     private static final int NUM_PLANTS = 5;
     //Whether or not Workers should continue processing oranges
-    public volatile boolean workDay = true;
+    private volatile boolean workDay = true;
     //number of plants finished
     private volatile int closedDown = 0;
     //When to tell the plants to close down
@@ -23,7 +23,7 @@ public class BottlerCo{
      * 
      * @param args
      */
-    BottlerCo(){
+    public BottlerCo(){
     	WorkDay();
     }
     public static void main(String[] args) {
@@ -86,6 +86,15 @@ public class BottlerCo{
     	totalProcessed += p.getOrangesProcessed();
     	totalBottled += p.getBottles();
     	totalWasted += p.getWaste();
+    }
+    
+    /**
+     * 
+     * @return Whether or not it is still time to work (true means it's still time to work)
+     */
+    public boolean isWorkday() {
+		return workDay;
+    	
     }
 
     

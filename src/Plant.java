@@ -20,7 +20,7 @@ public class Plant implements Runnable {
      * 
      * @param num
      */
-    Plant(BottlerCo corp, int num) {
+    public Plant(BottlerCo corp, int num) {
     	c = corp;
     	plantID = num;
         orangesProcessed = 0;
@@ -40,7 +40,7 @@ public class Plant implements Runnable {
             new Worker(c, this, line, getPlantID(), i);
         }
         
-		while(c.workDay){
+		while(c.isWorkday()){
 			this.fetchOrange(new Orange());
             provided++;
 		}

@@ -8,7 +8,7 @@ public class AssemblyLine {
 	/**Basic constructor.
 	 * 
 	 */
-	AssemblyLine(){
+	public AssemblyLine(){
 		oranges = new ArrayList<Orange>();
 	}
 	
